@@ -16,7 +16,7 @@ const months: string[] = [
   'Dec',
 ];
 
-export const barData = {
+export const barData: chartjs.ChartData<'bar'> = {
   labels: months,
   datasets: [
     {
@@ -30,6 +30,7 @@ export const barData = {
 };
 export const barOptions: chartjs.ChartOptions<'bar'> = {
   responsive: true,
+  plugins: { legend: { display: false } },
   scales: {
     x: {
       grid: {
@@ -44,6 +45,31 @@ export const barOptions: chartjs.ChartOptions<'bar'> = {
         callback(tickValue) {
           return tickValue ? `₦ ${tickValue}k` : '';
         },
+      },
+    },
+  },
+};
+
+export const pieData: chartjs.ChartData<'doughnut'> = {
+  labels: ['Desktop', 'Tablet', 'Mobile', 'Unknown'],
+  datasets: [
+    {
+      data: [12, 19, 3, 5],
+      backgroundColor: ['#305C45', '#E6A960', '#47A8BD', '#EDF7D2'],
+      borderWidth: 0,
+
+    },
+  ],
+};
+
+export const pieOptions: chartjs.ChartOptions<'doughnut'> = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'bottom',
+      labels: {
+        usePointStyle: true,
+        boxWidth: 2,
       },
     },
   },

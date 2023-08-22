@@ -9,11 +9,21 @@ import {
   BarElement,
   Title,
   Tooltip,
+  Legend,
+  ArcElement,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { barData, barOptions } from './data';
+import { Bar, Doughnut } from 'react-chartjs-2';
+import { barData, barOptions, pieData, pieOptions } from './data';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
 
 const Charts = () => {
   return (
@@ -32,6 +42,7 @@ const Charts = () => {
         <div className={styles.title}>
           <p>total visitors</p>
         </div>
+        <Doughnut data={pieData} options={pieOptions} />
       </div>
     </div>
   );
