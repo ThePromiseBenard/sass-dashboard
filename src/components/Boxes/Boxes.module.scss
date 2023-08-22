@@ -1,0 +1,75 @@
+@import '../../app/variables.scss';
+
+@mixin default {
+  padding: 0.5rem;
+  border-radius: 24px;
+  display: flex;
+
+  gap: 0.5rem;
+  font-weight: weight(bold);
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  .box {
+    background-color: $main-white;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .type {
+      font-size: size(sm);
+      color: $gray;
+      text-transform: capitalize;
+    }
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 1rem;
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 1rem;
+        .amount {
+          font-size: size(lg);
+          font-weight: weight(bold);
+        }
+        .pecentageWrapper {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .down {
+            @include default;
+            color: $orange;
+            background-color: $orange-shade;
+          }
+          .up {
+            @include default;
+            color: $green;
+            background-color: $green-shade;
+          }
+          p {
+            font-size: size(sm);
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

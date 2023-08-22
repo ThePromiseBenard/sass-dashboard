@@ -1,0 +1,148 @@
+@import '../../app/variables.scss';
+
+.container {
+  background-color: $main-white;
+  padding-block: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    width: 15%;
+    text-align: center;
+    font-size: size(logo);
+    font-weight: weight(bold);
+    text-transform: uppercase;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .rightSide {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    .pageTitle {
+      text-transform: capitalize;
+      font-size: size(lg);
+      font-weight: weight(bold);
+      flex-grow: 1;
+      @include mobile {
+        font-size: size(md);
+      }
+    }
+    .informationBar {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .search {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        font-size: size(lg);
+        color: $border;
+        border: 1.4px solid $border;
+        border-radius: 8px;
+        width: 50%;
+        @include tablet {
+          border: none;
+          width: auto;
+        }
+        span {
+          cursor: pointer;
+        }
+        input {
+          border: none;
+          width: 100%;
+          color: $border;
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            font-size: size(sm);
+            color: $border;
+          }
+          @include tablet {
+            display: none;
+          }
+        }
+      }
+      .profileBar {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        .bellContainer {
+          position: relative;
+          .bell {
+            font-size: size(bell);
+            color: #535c5f;
+            cursor: pointer;
+            width: 100%;
+          }
+          span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 6px;
+            margin-right: 13px;
+            display: block;
+            background-color: red;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+          }
+        }
+        .avatarContainer {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          cursor: pointer;
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            p {
+              font-size: size(md);
+              color: $black;
+              text-transform: capitalize;
+              font-weight: weight(bold);
+            }
+            span {
+              color: $gray;
+              text-transform: capitalize;
+            }
+          }
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+      .menuIcon {
+        color: black;
+        font-size: size(lg);
+        display: none;
+        cursor: pointer;
+        @include tablet {
+          display: block;
+        }
+      }
+
+      @include tablet {
+        justify-content: end;
+        gap: 2rem;
+      }
+    }
+    @include tablet {
+      width: 100vw;
+      justify-content: end;
+    }
+  }
+
+  @include tablet {
+    padding-inline: 1.6rem;
+  }
+  @include mobile {
+    padding: 0.6rem;
+  }
+}

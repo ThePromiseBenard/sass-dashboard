@@ -1,0 +1,59 @@
+@import '../../app/variables.scss';
+
+@mixin boxes {
+  background-color: $main-white;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      font-size: size(lg);
+      text-transform: capitalize;
+      @include tablet {
+        font-size: size(md);
+        font-weight: size(bold);
+      }
+    }
+    span {
+      padding: 0.5rem;
+      border: 1px solid $gray;
+      border-radius: 8px;
+      color: $gray;
+      font-size: size(sm);
+      text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  .right {
+    @include boxes;
+    grid-column: span 2;
+    @include tablet {
+      grid-column: span 1;
+    }
+  }
+  .left {
+    @include boxes;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

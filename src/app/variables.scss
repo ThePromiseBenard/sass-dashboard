@@ -1,0 +1,50 @@
+// colors
+$primary-color: #f1f1f1;
+$main-white: #fff;
+$green-shade: #305c451a;
+$green: #305c45;
+$orange: #e6a960;
+$orange-shade: #e6a9601a;
+$gray: #939393;
+$black: #313638;
+$border: #adadad;
+
+// font-weight
+$font-weight: (
+  'normal': 400,
+  'bold': 500,
+);
+
+// font sizes
+$font-size: (
+  'logo': 52px,
+  'bell': 44px,
+  'lg': 28px,
+  'md': 18px,
+  'base': 16px,
+  'sm': 14px,
+);
+
+// function for geting font-size
+@function size($size-name) {
+  @return map-get($font-size, $size-name);
+}
+// function for geting font-weight
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}
+
+// screen sizes;
+$mobile: 660px;
+$tablet: 850px;
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}

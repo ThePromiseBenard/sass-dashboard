@@ -1,0 +1,24 @@
+@import '../../app/variables.scss';
+
+.main {
+  background-color: $main-white;
+  height: 100%;
+  width: 16%;
+  padding-block-start: 1rem;
+  padding-inline: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .title {
+    color: $gray;
+    text-transform: uppercase;
+    font-size: size(md);
+    font-weight: weight(normal);
+    margin-bottom: 1rem;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}

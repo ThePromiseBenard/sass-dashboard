@@ -1,0 +1,40 @@
+@import '../../app/variables.scss';
+
+@mixin defaultState {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: $gray;
+  font-size: size(base);
+  padding-inline: 0.6rem;
+  padding-block: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $primary-color;
+    color: $black;
+    font-weight: weight(bold);
+  }
+  .text {
+    margin-top: 3px;
+    text-transform: capitalize;
+  }
+}
+
+.main {
+  @include defaultState;
+}
+
+.active {
+  @include defaultState;
+  background-color: $primary-color;
+  font-weight: weight(bold);
+  border-left: 4px solid $green;
+  color: $black;
+  gap: .8rem;
+  &:hover {
+    color: $black;
+    font-weight: weight(bold);
+  }
+}
