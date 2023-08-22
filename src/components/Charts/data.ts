@@ -28,7 +28,7 @@ export const barData = {
     },
   ],
 };
-export const barOptions: chartjs.ChartOptions = {
+export const barOptions: chartjs.ChartOptions<'bar'> = {
   responsive: true,
   scales: {
     x: {
