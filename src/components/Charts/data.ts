@@ -57,7 +57,6 @@ export const pieData: chartjs.ChartData<'doughnut'> = {
       data: [12, 19, 3, 5],
       backgroundColor: ['#305C45', '#E6A960', '#47A8BD', '#EDF7D2'],
       borderWidth: 0,
-
     },
   ],
 };
@@ -69,8 +68,26 @@ export const pieOptions: chartjs.ChartOptions<'doughnut'> = {
       position: 'bottom',
       labels: {
         usePointStyle: true,
-        boxWidth: 2,
+        boxHeight: 8,
+        boxWidth: 6,
       },
     },
+  },
+};
+
+export const textCenter = {
+  id: 'textCenter',
+  beforeDatasetsDraw(chart: { getDatasetMeta?: any; ctx?: any; data?: any }) {
+    const { ctx, data } = chart;
+    ctx.save();
+    ctx.font = 'bolder 30px sans-serif';
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(
+      '14.3K',
+      chart.getDatasetMeta(0).data[0].x,
+      chart.getDatasetMeta(0).data[0].y
+    );
   },
 };

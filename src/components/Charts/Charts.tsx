@@ -13,7 +13,7 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Bar, Doughnut } from 'react-chartjs-2';
-import { barData, barOptions, pieData, pieOptions } from './data';
+import { barData, barOptions, pieData, pieOptions, textCenter } from './data';
 
 ChartJS.register(
   CategoryScale,
@@ -42,7 +42,13 @@ const Charts = () => {
         <div className={styles.title}>
           <p>total visitors</p>
         </div>
-        <Doughnut data={pieData} options={pieOptions} />
+        <div>
+          <Doughnut
+            data={pieData}
+            options={pieOptions}
+            plugins={[textCenter]}
+          />
+        </div>
       </div>
     </div>
   );
