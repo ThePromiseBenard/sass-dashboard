@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import styles from './Charts.module.scss';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -9,19 +9,11 @@ import {
   BarElement,
   Title,
   Tooltip,
-
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { barData, options } from './data';
+import { barData, barOptions } from './data';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const Charts = () => {
   return (
@@ -34,7 +26,7 @@ const Charts = () => {
             <MdKeyboardArrowDown />
           </span>
         </div>
-        <Bar options={options} data={barData} />
+        <Bar options={barOptions} data={barData} />
       </div>
       <div className={styles.left}>
         <div className={styles.title}>
