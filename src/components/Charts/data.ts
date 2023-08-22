@@ -63,6 +63,7 @@ export const pieData: chartjs.ChartData<'doughnut'> = {
 
 export const pieOptions: chartjs.ChartOptions<'doughnut'> = {
   responsive: true,
+  cutout: 100,
   plugins: {
     legend: {
       position: 'bottom',

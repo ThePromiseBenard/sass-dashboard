@@ -1,0 +1,83 @@
+@import '../../app/variables.scss';
+
+.container {
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    p {
+      font-size: size(lg);
+      text-transform: capitalize;
+      @include tablet {
+        font-size: size(md);
+        font-weight: size(bold);
+      }
+    }
+    .time {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      span {
+        padding: 0.5rem;
+        border: 1px solid $gray;
+        border-radius: 8px;
+        color: $gray;
+        font-size: size(sm);
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        cursor: pointer;
+      }
+    }
+  }
+  .tableWrapper {
+    background-color: $main-white;
+    border-radius: 8px;
+    .tableTabs {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      border-bottom: 1px solid $gray;
+      padding: 1.6rem;
+      p {
+        color: $gray;
+        text-transform: capitalize;
+      }
+    }
+    table {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 2rem;
+    }
+    .tableHeader {
+      text-align: left;
+      padding: 10px;
+      text-transform: capitalize;
+      color: $gray;
+      font-size: size(sm);
+      font-weight: weight(bold);
+    }
+
+    .bodyColumn {
+      text-align: left;
+      text-transform: capitalize;
+      padding-inline: 10px;
+      padding-block: 25px;
+      color: $black;
+      font-size: size(base);
+      font-weight: weight(bold);
+    }
+  }
+}
+
+.failed {
+  color: #e44339 !important;
+}
+.pending {
+  color: #e6a960 !important;
+}
+.complete {
+  color: #53a178 !important;
+}
